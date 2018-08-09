@@ -1,36 +1,143 @@
 <html>
 <head>
-<title>Emil Scherdin</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emil Scherdin</title>
 <style>
 @font-face {
     font-family: 'customFont';
-    src: url('ostrich-sans-bold.ttf');
+    src: url('font.ttf');
 }
 html{
-	background-color: #FFEB00;
+	background-color: #f2f2f2;
 	font-family: 'customFont';
-	text-align: center;
+  color: #222;
+  font-size: 38px;
+	text-align: left;
+  margin: 0 auto;
+}
+body {
+  max-width: 1060px;
+  margin: 120px auto 0;
+}
+p {
+  margin: 0;
 }
 h1{
   font-size: 120px;
   margin: 17% 0 0;
 }
-a{
-  padding: 12px 14px 8px;
-  border: 3px solid black;
+#inner {
+  margin: 0 30px;
+}
+#content {
+  padding-bottom: 300px;
+}
+.text {
+  margin: 16px 0;
+}
+.button {
+  border-radius: 24px;
+  padding: 12px 20px;
+  color: white;
+  display: inline-block;
+  background-color: #4A90E2;
+  margin-top: 0;
+  font-size: 18px;
   text-decoration: none;
-  color: black;
-  line-height: 40px;
-  transition: all .15s;
+  transition: opacity .2s, margin-top .4s ease-in-out;
+  cursor: pointer;
 }
-a:hover{
-  background-color: black;
-  color: #FFEB00;
+
+.button-outer {
+  opacity: 0;
+  margin-top: 20px;
+  height: 60px;
+  transition: opacity .6s ease-in-out, margin-top .4s ease-in-out, height .4s;
 }
+
+.button-outer.show > .button {
+  margin-top: 10px;
+}
+
+.button-outer.show {
+  opacity: 1;
+  margin-top: 0;
+  height: 60px;
+  transition: opacity .6s ease-in-out, margin-top .4s ease-in-out, height .01s;
+}
+.button-outer.hide {
+  margin-top: 0;
+  height: 0;
+  transition: ease-in-out opacity .3s, ease-in-out margin-top .4s, height .3s ease .1s;
+}
+
+.button:hover {
+  opacity: 0.9;
+}
+.button > img {
+  margin-left: -5px;
+  margin-right: -12px;
+  margin-bottom: -5px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity, margin-left .2s;
+}
+.button:hover > img {
+  margin-left: 3px;
+  opacity: 1;
+}
+
+.button-outer.show.selected {
+  height: 82px;
+  transition: opacity .6s ease-in-out, margin-top .4s ease-in-out, height .4s;
+}
+
+.button-outer.show.selected > .button {
+  background-color: #5faf74;
+  cursor: default;
+  margin-top: 40px;
+  margin-bottom: 6px;
+  padding: 8px 14px;
+  font-size: 15px;
+  transition: background-color .6s ease-in-out, font-size .4s ease-in-out, padding .4s ease-in-out, margin-top .4s ease-in-out, margin-bottom .4s ease-in-out, padding .4s ease-in-out;
+}
+.button-outer.show.selected > .button:hover {
+  opacity: 1;
+}
+.button-outer.show.selected > .button:hover > img {
+  opacity: 0;
+  margin-left: -5px;
+}
+a {
+  color: #222;
+}
+.text-spacer {
+  height: 14px;
+}
+.text-divider {
+  background: #e8e8e8;
+  border-radius: 15px;
+  height: 3px;
+  width: 114px;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
 </style>
 </head>
 <body>
-<h1>Emil Scherdin</h1>
-<a href="mailto:escherdin@gmail.com">Contact me</a>
+  <div id="inner">
+      <div id="content"></div>
+      <div id="scroll-anchor"></div>
+  </div>
+
+<script src="lib/main.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
+<script id="buttons-template" type="x-tmpl-mustache">
+    {{#items}}
+    <div class="button-outer" id="question-{{ tag }}"><a class="button" onclick="onButtonPress('{{ tag }}')">{{ text }}<img src="arrow.svg" width="20" /></a></div>
+    {{/items}}
+</script>
 </body>
 </html>

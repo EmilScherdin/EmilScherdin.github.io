@@ -1,0 +1,28 @@
+{
+  "name": "emilscherdin.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel src -d lib",
+    "start": "babel-watch src/main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EmilScherdin/EmilScherdin.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EmilScherdin/EmilScherdin.github.io/issues"
+  },
+  "homepage": "https://github.com/EmilScherdin/EmilScherdin.github.io#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-watch": "^2.0.7"
+  },
+  "dependencies": {
+  }
+}
