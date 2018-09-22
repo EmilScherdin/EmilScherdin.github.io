@@ -63,18 +63,18 @@ const onButtonPress = tag => {
     switch (tag) {
         case tags.YOU:
             TypeOutParagraph(aboutMe, 'about-me-1');
-            queDelay(1000);
+            queDelay(500);
             TypeOutParagraph(aboutMe2, 'about-me-1');
-            queDelay(2000);
+            queDelay(1000);
             queSpacer();
             TypeOutParagraph(aboutMe3, 'about-me-3');
-            queDelay(600);
+            queDelay(400);
             TypeOutParagraph(aboutMe4, 'about-me-3');
-            queDelay(1000);
-            TypeOutParagraph(aboutMe5, 'about-me-3');
             queDelay(600);
+            TypeOutParagraph(aboutMe5, 'about-me-3');
+            queDelay(400);
             TypeOutParagraph(aboutMe6, 'about-me-3');
-            queDelay(2000);
+            queDelay(1000);
             queSpacer();
             TypeOutParagraph(aboutMe7, 'about-me-6');
             queDelay(600);
@@ -85,7 +85,6 @@ const onButtonPress = tag => {
             TypeOutParagraph(aboutMe10, 'about-me-6');
             queSpacer();
             queDivider();
-            queSpacer();
             break;
         case tags.WORK:
             TypeOutParagraph(aboutWork, 'about-work-1');
@@ -98,7 +97,7 @@ const onButtonPress = tag => {
             TypeOutParagraph(aboutWork4, 'about-work-4');
             TypeOutParagraph('laget.se', 'work-link-2', {tag: 'A', attrs: [{ href: 'https://laget.se'}], target: 'about-work-4'});
             TypeOutParagraph(aboutWork5, 'about-work-4');
-            queDelay(3000);
+            queDelay(1000);
             queSpacer();
             TypeOutParagraph(aboutWork6, 'about-work-6');
             TypeOutParagraph('an email.', 'contact-work-link', {tag: 'A', attrs: [{ href: 'mailto:escherdin@gmail.com'}], target: 'about-work-6'});
@@ -123,7 +122,6 @@ const onButtonPress = tag => {
     queSpacer();
     TypeOutParagraph(getAsk(), 'ask-' + question.filter(q => !q.selected).length);
     que.push({type: types.FUNC, func: showAnswers});
-
 }
 
 const welcomeText = `Hi, I'm Emil.`;
@@ -141,7 +139,7 @@ const aboutMe2 = `I'm an energetic guy born in 1995 from Sweden.`;
 const aboutMe3 = `There's a lot of things I love, `;
 const aboutMe4 = `especially sports. `;
 const aboutMe5 = `Any kind of sports really. `;
-const aboutMe6 = `Mix that up with concepts, designing and talking ideas and you describe my perfect day.`;
+const aboutMe6 = `Mix that up with concepts, designing and talking ideas and you have my perfect day.`;
 const aboutMe7 = `My schedule is often full of things to do, `;
 const aboutMe8 = `planned into the minutes. `;
 const aboutMe9 = `But at the same time, `;
