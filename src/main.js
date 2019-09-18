@@ -134,21 +134,21 @@ const lastAsk = {
     ABOUT_YOU: `Want to know more about me?`,
 };
  
-const aboutMe = `Sooo, `;
+const aboutMe = `So, `;
 const aboutMe2 = `I'm an energetic guy born in 1995 from Sweden.`;
 const aboutMe3 = `There's a lot of things I love, `;
 const aboutMe4 = `especially sports. `;
-const aboutMe5 = `Any kind of sports really. `;
+const aboutMe5 = `Any kind of sports. `;
 const aboutMe6 = `Mix that up with concepts, designing and talking ideas and you have my perfect day.`;
 const aboutMe7 = `My schedule is often full of things to do, `;
 const aboutMe8 = `planned into the minutes. `;
-const aboutMe9 = `But at the same time, `;
-const aboutMe10 = ` I always make sure to make time for my friends and to get out in nature and reed a good book.`;
+const aboutMe9 = `But, `;
+const aboutMe10 = ` I always make sure to make time for my friends and to get out in nature and read a good book.`;
 
 const aboutWork = `Today I work with `;
 const aboutWork2 = `. `;
-const aboutWork3 = `I lead the product team, work with our product & business strategy along with the product design.`;
-const aboutWork4 = `Earlier I've been working as a developer, designer and product strategist for brands like `;
+const aboutWork3 = `I work with our product & business strategy along with the product design.`;
+const aboutWork4 = `Earlier I've been working as a developer, designer, project manager and product strategist for brands like `;
 const aboutWork5 = `, Happy Order, and Pliq.`;
 const aboutWork6 = `I'm always up for discussing new ideas or concepts, drop me `;
 
