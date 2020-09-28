@@ -29,7 +29,7 @@ const getAsk = () => {
         return secondAsk;
     }
 
-    queDelay(3000);
+    queDelay(2500);
     return endingWords;
 }
 
@@ -58,30 +58,30 @@ const queScroll = () => {
 const onButtonPress = tag => {
     hideAnswers(tag);
     selectQuestion(tag);
-    queDelay(1000);
+    queDelay(700);
 
     switch (tag) {
         case tags.YOU:
             TypeOutParagraph(aboutMe, 'about-me-1');
-            queDelay(500);
+            queDelay(400);
             TypeOutParagraph(aboutMe2, 'about-me-1');
-            queDelay(600);
+            queDelay(500);
             queSpacer();
             TypeOutParagraph(aboutMe3, 'about-me-3');
-            queDelay(300);
+            queDelay(200);
             TypeOutParagraph(aboutMe4, 'about-me-3');
-            queDelay(400);
-            TypeOutParagraph(aboutMe5, 'about-me-3');
             queDelay(300);
+            TypeOutParagraph(aboutMe5, 'about-me-3');
+            queDelay(200);
             TypeOutParagraph(aboutMe6, 'about-me-3');
-            queDelay(600);
+            queDelay(500);
             queSpacer();
             TypeOutParagraph(aboutMe7, 'about-me-6');
-            queDelay(400);
+            queDelay(300);
             TypeOutParagraph(aboutMe8, 'about-me-6');
-            queDelay(1000);
+            queDelay(700);
             TypeOutParagraph(aboutMe9, 'about-me-6');
-            queDelay(400);
+            queDelay(300);
             TypeOutParagraph(aboutMe10, 'about-me-6');
             queSpacer();
             queDivider();
@@ -90,14 +90,14 @@ const onButtonPress = tag => {
             TypeOutParagraph(aboutWork, 'about-work-1');
             TypeOutParagraph('Heja', 'work-link', {tag: 'A', attrs: [{ href: 'https://heja.io'}], target: 'about-work-1'});
             TypeOutParagraph(aboutWork2, 'about-work-1');
-            queDelay(600);
+            queDelay(500);
             TypeOutParagraph(aboutWork3, 'about-work-1');
-            queDelay(1000);
+            queDelay(700);
             queSpacer();
             TypeOutParagraph(aboutWork4, 'about-work-4');
             TypeOutParagraph('laget.se', 'work-link-2', {tag: 'A', attrs: [{ href: 'https://laget.se'}], target: 'about-work-4'});
             TypeOutParagraph(aboutWork5, 'about-work-4');
-            queDelay(600);
+            queDelay(500);
             queSpacer();
             TypeOutParagraph(aboutWork6, 'about-work-6');
             TypeOutParagraph('an email.', 'contact-work-link', {tag: 'A', attrs: [{ href: 'mailto:escherdin@gmail.com'}], target: 'about-work-6'});
@@ -106,7 +106,7 @@ const onButtonPress = tag => {
             break;
         case tags.CONTACT:
             TypeOutParagraph(contact, 'contact-me-1');
-            queDelay(600);
+            queDelay(500);
             TypeOutParagraph(contact2, 'contact-me-1');
             TypeOutParagraph(contact3, 'contact-me-1');
             TypeOutParagraph('an email', 'contact-link', {tag: 'A', attrs: [{ href: 'mailto:escherdin@gmail.com'}], target: 'contact-me-1'});
@@ -118,7 +118,7 @@ const onButtonPress = tag => {
             break;
     }
     
-    queDelay(3000);
+    queDelay(2000);
     queSpacer();
     TypeOutParagraph(getAsk(), 'ask-' + question.filter(q => !q.selected).length);
     que.push({type: types.FUNC, func: showAnswers});
@@ -188,7 +188,7 @@ const hideAnswers = (ignoreTag) => {
             }});
         }
     });
-    queDelay(750);
+    queDelay(600);
     queFunc(removeButtons);
 };
 
@@ -206,7 +206,7 @@ const showAnswers = () => {
     question.filter(q => !q.selected).forEach(q => {
         queFunc(() => addClass('question-' + q.tag, 'show'));
     });
-    queDelay(500);
+    queDelay(400);
     queScroll();
 }
 
@@ -254,7 +254,7 @@ const queDelay = delay => {
 const start = () => {
     TypeOutParagraph(welcomeText, 'text-hi');
     queSpacer();
-    queDelay(1500);
+    queDelay(900);
     TypeOutParagraph(firstAsk, 'ask-first');  
     que.push({type: types.FUNC, func: showAnswers });
 }
@@ -266,7 +266,7 @@ const scrollToBottom = () => {
  
 const que = [];
 
-const queConsumer = (defaultDelay = 50) => {
+const queConsumer = (defaultDelay = 25) => {
     let delay = defaultDelay;
 
     if (que.length > 0) {
