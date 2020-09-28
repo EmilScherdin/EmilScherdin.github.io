@@ -266,7 +266,7 @@ const scrollToBottom = () => {
  
 const que = [];
 
-const queConsumer = (defaultDelay = 25) => {
+const queConsumer = (defaultDelay = 20) => {
     let delay = defaultDelay;
 
     if (que.length > 0) {
