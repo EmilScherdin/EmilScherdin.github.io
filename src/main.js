@@ -1,8 +1,4 @@
 
-const test = () => {
-    console.log('hello');
-}
-
 const tags = {
     YOU: 'ABOUT_YOU',
     WORK: 'ABOUT_WORK',
@@ -19,8 +15,6 @@ const types = {
 
 const getAsk = () => {
     const qsLeft = question.filter(q => !q.selected);
-
-    console.log(qsLeft);
 
     if (qsLeft.length === 1) {
         return lastAsk[qsLeft[0].tag];
@@ -60,57 +54,45 @@ const onButtonPress = tag => {
     selectQuestion(tag);
     queDelay(700);
 
+    // Yeah I agree, this is ugly.. But better done than perfect
     switch (tag) {
         case tags.YOU:
-            TypeOutParagraph(aboutMe, 'about-me-1');
-            queDelay(400);
-            TypeOutParagraph(aboutMe2, 'about-me-1');
-            queDelay(500);
+            TypeOutParagraph(aboutMe[0], 'about-me-1', 400);
+            TypeOutParagraph(aboutMe[1], 'about-me-1', 500);
             queSpacer();
-            TypeOutParagraph(aboutMe3, 'about-me-3');
-            queDelay(200);
-            TypeOutParagraph(aboutMe4, 'about-me-3');
-            queDelay(300);
-            TypeOutParagraph(aboutMe5, 'about-me-3');
-            queDelay(200);
-            TypeOutParagraph(aboutMe6, 'about-me-3');
-            queDelay(500);
+            TypeOutParagraph(aboutMe[2], 'about-me-3', 200);
+            TypeOutParagraph(aboutMe[3], 'about-me-3', 300);
+            TypeOutParagraph(aboutMe[4], 'about-me-3', 200);
+            TypeOutParagraph(aboutMe[5], 'about-me-3', 500);
             queSpacer();
-            TypeOutParagraph(aboutMe7, 'about-me-6');
-            queDelay(300);
-            TypeOutParagraph(aboutMe8, 'about-me-6');
-            queDelay(700);
-            TypeOutParagraph(aboutMe9, 'about-me-6');
-            queDelay(300);
-            TypeOutParagraph(aboutMe10, 'about-me-6');
+            TypeOutParagraph(aboutMe[6], 'about-me-6', 300);
+            TypeOutParagraph(aboutMe[7], 'about-me-6', 700);
+            TypeOutParagraph(aboutMe[8], 'about-me-6', 300);
+            TypeOutParagraph(aboutMe[9], 'about-me-6');
             queSpacer();
             queDivider();
             break;
         case tags.WORK:
-            TypeOutParagraph(aboutWork, 'about-work-1');
-            TypeOutParagraph('Heja', 'work-link', {tag: 'A', attrs: [{ href: 'https://heja.io'}], target: 'about-work-1'});
-            TypeOutParagraph(aboutWork2, 'about-work-1');
-            queDelay(500);
-            TypeOutParagraph(aboutWork3, 'about-work-1');
-            queDelay(700);
+            TypeOutParagraph(aboutWork[0], 'about-work-1');
+            TypeOutParagraph('Heja', 'work-link', null, {tag: 'A', attrs: [{ href: 'https://heja.io'}], target: 'about-work-1'});
+            TypeOutParagraph(aboutWork[1], 'about-work-1', 500);
+            TypeOutParagraph(aboutWork[2], 'about-work-1', 700);
             queSpacer();
-            TypeOutParagraph(aboutWork4, 'about-work-4');
-            TypeOutParagraph('laget.se', 'work-link-2', {tag: 'A', attrs: [{ href: 'https://laget.se'}], target: 'about-work-4'});
-            TypeOutParagraph(aboutWork5, 'about-work-4');
-            queDelay(500);
+            TypeOutParagraph(aboutWork[3], 'about-work-4');
+            TypeOutParagraph('laget.se', 'work-link-2', null, {tag: 'A', attrs: [{ href: 'https://laget.se'}], target: 'about-work-4'});
+            TypeOutParagraph(aboutWork[4], 'about-work-4', 500);
             queSpacer();
-            TypeOutParagraph(aboutWork6, 'about-work-6');
-            TypeOutParagraph('an email.', 'contact-work-link', {tag: 'A', attrs: [{ href: 'mailto:escherdin@gmail.com'}], target: 'about-work-6'});
+            TypeOutParagraph(aboutWork[5], 'about-work-6');
+            TypeOutParagraph('an email.', 'contact-work-link', null, {tag: 'A', attrs: [{ href: 'mailto:escherdin@gmail.com'}], target: 'about-work-6'});
             queSpacer();
             queDivider();
             break;
         case tags.CONTACT:
-            TypeOutParagraph(contact, 'contact-me-1');
-            queDelay(500);
-            TypeOutParagraph(contact2, 'contact-me-1');
-            TypeOutParagraph(contact3, 'contact-me-1');
-            TypeOutParagraph('an email', 'contact-link', {tag: 'A', attrs: [{ href: 'mailto:escherdin@gmail.com'}], target: 'contact-me-1'});
-            TypeOutParagraph(contact4, 'contact-me-1');
+            TypeOutParagraph(contact[0], 'contact-me-1', 500);
+            TypeOutParagraph(contact[1], 'contact-me-1');
+            TypeOutParagraph(contact[2], 'contact-me-1');
+            TypeOutParagraph('an email', 'contact-link', null, {tag: 'A', attrs: [{ href: 'mailto:escherdin@gmail.com'}], target: 'contact-me-1'});
+            TypeOutParagraph(contact[3], 'contact-me-1');
             queSpacer();
             queDivider();
             break;
@@ -134,28 +116,33 @@ const lastAsk = {
     ABOUT_YOU: `Want to know more about me?`,
 };
  
-const aboutMe = `So, `;
-const aboutMe2 = `I'm an energetic guy born in 1995 from Sweden.`;
-const aboutMe3 = `There's a lot of things I love, `;
-const aboutMe4 = `especially sports. `;
-const aboutMe5 = `Any kind of sports. `;
-const aboutMe6 = `Mix that up with concepts, designing and talking ideas and you have my perfect day.`;
-const aboutMe7 = `My schedule is often full of things to do, `;
-const aboutMe8 = `planned into the minutes. `;
-const aboutMe9 = `But, `;
-const aboutMe10 = ` I always make sure to make time for my friends and to get out in nature and read a good book.`;
+const aboutMe = [
+    `So, `,
+    `I'm an energetic guy born in Örebro, living in Stockholm.`,
+    `There's a lot of things I love, `,
+    `especially sports. `,
+    `Any kind of sports. `, 
+    `Mix that up with concepts, designing, talking ideas and world problems and it's my perfect day.`,
+    `My schedule is often tight packaged of things to do, `,
+    `planned into the minutes. `,
+    `But, `,
+    `I always make sure to make time for my friends, get out in nature and to read a good book.`
+];
+const aboutWork = [
+    `Today I work with `,
+    `. `,  // Like what? No one will understand this code mess. But what to do for UX. Imagine a life without clickable links..
+    `I work with our product & business strategy along with the product design.`,
+    `Earlier I've been working as a developer, designer, project manager and product strategist for brands like `,
+    `, Happy Order, and Emax.`, 
+    `I'm always up for discussing new ideas or concepts, drop me `,
+];
 
-const aboutWork = `Today I work with `;
-const aboutWork2 = `. `;
-const aboutWork3 = `I work with our product & business strategy along with the product design.`;
-const aboutWork4 = `Earlier I've been working as a developer, designer, project manager and product strategist for brands like `;
-const aboutWork5 = `, Happy Order, and Pliq.`;
-const aboutWork6 = `I'm always up for discussing new ideas or concepts, drop me `;
-
-const contact = 'I often like to meet in person over a juice, beer or food. ';
-const contact2 = 'But just to kick it off, ';
-const contact3 = 'drop me ';
-const contact4 = ' :)';
+const contact = [
+    'I often like to meet in person over a juice, beer or food. ',
+    'But just to kick it off, ',
+    'drop me ',
+    ' :)',
+];
 
 const endingWords = `That's all you get to know about me for now. Thanks for stopping by.`;
 
@@ -164,7 +151,6 @@ const question = [
     { text: `What I've worked with`, tag: tags.WORK, selected: false },
     { text: 'How to contact me', tag: tags.CONTACT, selected: false },
 ];
-
 
 const queFunc = (func = () => {}) => {
     que.push({type: types.FUNC, func });
@@ -224,7 +210,6 @@ const addLetter = (targetId, letter) => {
 }
 
 const createElement = (tag, attrs = [], target = 'content') => {
-    console.log(target);
     const el = document.createElement(tag);
     attrs.forEach(attr => {
         const keys = Object.keys(attr);
@@ -237,14 +222,17 @@ const queNewElement = (tag, attrs = [], target) => {
    que.push({ type: types.ELEMENT, tag, attrs, target });
 }
 
-const TypeOutParagraph = (text, targetId, element = {tag: 'P', attrs: []}) => {
-    console.log('el', element.target);
+const TypeOutParagraph = (text, targetId, delay = undefined, element = {tag: 'P', attrs: []}) => {
     const attributes = [...element.attrs, { id: targetId }];
     queNewElement(element.tag, attributes, element.target);
 
     text.split('').forEach((letter, i) => {
         que.push({type: types.LETTER, text: letter, targetId});
     });
+
+    if (delay) {
+        queDelay(delay);
+    }
 }
 
 const queDelay = delay => {
@@ -260,7 +248,7 @@ const start = () => {
 }
 
 const scrollToBottom = () => {
-    //YEY new API works good in chrome, let's just stick with this, the other browsers will catch uo..
+    //Yey, new API works good in chrome, let's just stick with this, the other browsers will catch uo..
     document.getElementById('scroll-anchor').scrollIntoView({behavior: 'smooth', lock: "end", inline: 'end'});
 }
  
