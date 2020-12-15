@@ -118,15 +118,15 @@ const lastAsk = {
  
 const aboutMe = [
     `So, `,
-    `I'm an energetic guy born in Örebro, living in Stockholm.`,
-    `There's a lot of things I love, `,
+    `I'm an energetic guy born in Kumla, Närke. Nowdays I'm located in Stockholm.`,
+    `There's a lot of things I like, `,
     `especially sports. `,
     `Any kind of sports. `, 
     `Mix that up with concepts, designing, talking ideas and world problems and it's my perfect day.`,
     `My schedule is often tight packaged of things to do, `,
     `planned into the minutes. `,
     `But, `,
-    `I always make sure to make time for my friends, get out in nature and to read a good book.`
+    `I always make sure to make time for my friends, to get out in nature and to read a good book.`
 ];
 const aboutWork = [
     `Today I work with `,
